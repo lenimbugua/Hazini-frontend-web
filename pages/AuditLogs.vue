@@ -1,0 +1,3 @@
+<template>
+  <TheAuditLogs />
+</template>
