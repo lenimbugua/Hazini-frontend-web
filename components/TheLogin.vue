@@ -1,16 +1,16 @@
+<script setup lang="ts">
+</script>
 <template>
- 
-  <!-- <div class="container mx-auto w-full bg-gray-100"> -->
-
   <div class="flex justify-center h-full">
     <div class="h-full items-center p-8 pt-48">
       <div class="w-full">
         <div class="block">
           <div class="flex justify-center">
             <router-link to=""
-              ><img src="../assets/images/hazini_logo.png" style="margin-left: 10px"
+              ><img
+                src="../assets/images/hazini_logo.png"
+                style="margin-left: 10px"
             /></router-link>
-            <!-- <h2><small></small></h2> -->
           </div>
           <br />
           <form @submit.prevent="">
@@ -62,5 +62,4 @@
       </div>
     </div>
   </div>
-  <!-- </div> -->
 </template>
