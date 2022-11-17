@@ -4,7 +4,7 @@
       <LazyTheLogo />
     </div>
     <nav class="block space-y-3 text-teal-100 p-5">
-      <NuxtLink to="/" class="cursor-pointer text-sm flex space-x-2">
+      <NuxtLink to="/dashboard" class="cursor-pointer text-sm flex space-x-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -243,7 +243,10 @@
         </svg>
         <span>Deduction Histories</span>
       </NuxtLink>
-      <NuxtLink to="/textmessages" class="cursor-pointer text-sm flex space-x-2">
+      <NuxtLink
+        to="/textmessages"
+        class="cursor-pointer text-sm flex space-x-2"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -260,7 +263,9 @@
         </svg>
         <span>Text Messages</span>
       </NuxtLink>
-      <NuxtLink to="/notifications" class="cursor-pointer text-sm flex space-x-2"
+      <NuxtLink
+        to="/notifications"
+        class="cursor-pointer text-sm flex space-x-2"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
