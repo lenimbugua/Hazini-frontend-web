@@ -58,7 +58,7 @@
             />
           </svg>
         </div>
-        <div class="text-sm font-medium">No of loans Disbursed</div>
+        <div class="text-sm font-medium">Loans Disbursed</div>
       </div>
       <div
         class="col shadow-md rounded-md w-full py-2 px-2 bg-white-700 text-black"
