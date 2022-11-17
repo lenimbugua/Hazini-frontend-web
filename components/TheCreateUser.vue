@@ -44,7 +44,7 @@
           name="enter-password"
           type="text"
           class="bg-gray-50 border border-white-300 text-white-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-white-700 dark:border-white-600 dark:placeholder-white-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder=" enter-password"
+          placeholder=" enter password"
           required
         />
       </div>
@@ -56,7 +56,7 @@
           name="Confirm-password"
           type="text"
           class="bg-gray-50 border border-white-300 text-white-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-white-700 dark:border-white-600 dark:placeholder-white-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="confirm-password "
+          placeholder="confirm password "
           required
         />
       </div>
