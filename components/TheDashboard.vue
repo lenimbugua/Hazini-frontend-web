@@ -2,10 +2,8 @@
 <template>
   <div class="relative px-4 py-3">
     <div class="text-sm text-[#2C7075] mb-3">Reports</div>
-    <div class="flex gap-6 overflow-scroll">
-      <div
-        class="col shadow-md rounded-md w-full py-1 px-2 bg-white-700 text-black"
-      >
+    <div class="flex mb-6 py-4 gap-6 overflow-scroll">
+      <div class="shadow-lg rounded-md w-full p-4 bg-white-700 text-black">
         <div>
           <svg width="32" height="32" viewBox="0 0 16 16">
             <path
@@ -18,9 +16,7 @@
         </div>
         <div class="text-sm font-medium">Registered Companies</div>
       </div>
-      <div
-        class="col shadow-md rounded-md w-full py-1 px-2 bg-white-700 text-black"
-      >
+      <div class="shadow-lg rounded-md w-full p-4 bg-white-700 text-black">
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -39,9 +35,7 @@
         </div>
         <div class="text-sm font-medium">Registered Employees</div>
       </div>
-      <div
-        class="col shadow-md rounded-md w-full py-1 px-2 bg-white-700 text-black"
-      >
+      <div class="shadow-md rounded-md w-full p-4 text-black">
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -58,11 +52,9 @@
             />
           </svg>
         </div>
-        <div class="text-sm font-medium">No of loans Disbursed</div>
+        <div class="text-sm font-medium">Loans Disbursed</div>
       </div>
-      <div
-        class="col shadow-md rounded-md w-full py-2 px-2 bg-white-700 text-black"
-      >
+      <div class="shadow-lg rounded-md w-full p-4 bg-white text-black">
         <div class="text-sm font-medium font-gotham">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -81,9 +73,7 @@
         </div>
         <div class="text-sm">Amount Disbursed</div>
       </div>
-      <div
-        class="col shadow-md rounded-md w-full py-2 px-2 bg-white-700 text-black"
-      >
+      <div class="shadow-lg rounded-md w-full py-2 px-2 bg-white text-black">
         <div class="text-sm font-medium font-gotham">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -103,9 +93,7 @@
         <div class="text-sm">Failed Loans</div>
       </div>
 
-      <div
-        class="col shadow-md rounded-md w-full py-2 px-2 bg-white-700 text-black"
-      >
+      <div class="shadow-lg rounded-md w-full py-2 px-2 bg-white text-black">
         <div class="text-sm font-small font-gotham"></div>
         <div>
           <svg
@@ -126,12 +114,18 @@
         <div class="text-sm">Total collections</div>
       </div>
     </div>
-    <div
-      class="grid grid-cols-3 mt-6 shadow-md border overflow-hidden bg-white"
-    >
+    <div class="block shadow-md border overflow-hidden">
       <div class="col-span-2 bg-white rounded-md py-3 px-4">
         <div class="text-md text-[#2C7075] font-medium font-gotham">Loans</div>
         <canvas id="myChart" width="500" height="250"></canvas>
+      </div>
+    </div>
+    <div
+      class="flex justify-start w-1/4 mt-6 shadow-md border overflow-hidden bg-white"
+    >
+      <div class="col-span-2 bg-white rounded-md py-3 px-4">
+        <div class="text-md text-[#2C7075] font-medium font-gotham">Loans</div>
+        <canvas id="myChart" width="100" height="100"></canvas>
       </div>
     </div>
   </div>
