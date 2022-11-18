@@ -9,7 +9,7 @@
         <template #title> <slot name="title" /></template>
         <template #main> <slot /></template>
       </TheMain>
-      <TheFooter class="absolute bottom-0" />
+      <TheFooter />
     </div>
   </div>
 </template>
