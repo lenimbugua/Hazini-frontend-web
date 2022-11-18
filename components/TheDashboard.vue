@@ -3,7 +3,7 @@
   <div class="relative px-4 py-3">
     <div class="text-sm text-[#2C7075] mb-3">Reports</div>
     <div class="flex mb-6 py-4 gap-6 overflow-scroll">
-      <div class="shadow-lg rounded-md w-full p-4 bg-white-700 text-black">
+      <div class="shadow-lg rounded-md w-full p-4 bg-white text-black">
         <div>
           <svg width="32" height="32" viewBox="0 0 16 16">
             <path
@@ -16,7 +16,7 @@
         </div>
         <div class="text-sm font-medium">Registered Companies</div>
       </div>
-      <div class="shadow-lg rounded-md w-full p-4 bg-white-700 text-black">
+      <div class="shadow-lg rounded-md w-full p-4 bg-white text-black">
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@
         </div>
         <div class="text-sm font-medium">Registered Employees</div>
       </div>
-      <div class="shadow-md rounded-md w-full p-4 text-black">
+      <div class="shadow-lg rounded-md w-full p-4 bg-white text-black">
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
