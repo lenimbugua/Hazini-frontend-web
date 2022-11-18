@@ -133,7 +133,7 @@
     <div
       class="flex justify-start w-1/4 mt-6 shadow-md border overflow-hidden bg-white"
     >
-      <div class="col-span-2 bg-white rounded-md py-2 px-2">
+      <div class="col-span-2 bg-white rounded-md py-3 px-4">
         <div class="text-md text-[#2C7075] font-medium font-gotham">Loans</div>
         <canvas id="myChart" width="100" height="100"></canvas>
       </div>
