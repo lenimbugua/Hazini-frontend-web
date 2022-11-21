@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-img-1 {
+  /* background: url(../img/jumbo-img-sel.png) bottom right no-repeat,
+    url(../img/bg-pattern.svg) repeat; */
+  background-size: contain;
+  background-color: #008999;
+  width: 100%;
+}
