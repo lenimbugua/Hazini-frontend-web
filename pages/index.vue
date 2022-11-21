@@ -1,3 +1,12 @@
+<script setup lang="ts">
+import { storeToRefs } from "pinia";
+import { useAuthStore } from "../stores/auth";
+const { viewToDisplay } = storeToRefs(useAuthStore());
+definePageMeta({
+  layout: "auth",
+});
+</script>
 <template>
-  <TheLogin />
+  <TheLogin v-if="viewToDisplay === 'LOGIN'" />
+  <TheRegister v-else />
 </template>
