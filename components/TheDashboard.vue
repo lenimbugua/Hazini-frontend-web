@@ -1,6 +1,6 @@
 <script setup lang="ts"></script>
 <template>
-  <div class="relative px-4 py-3">
+  <div class="px-4 py-3">
     <div class="text-sm text-[#2C7075] mb-3">Reports</div>
     <div class="flex mb-6 py-4 gap-6 overflow-scroll">
       <div class="shadow-lg rounded-md w-full p-4 bg-white text-black">

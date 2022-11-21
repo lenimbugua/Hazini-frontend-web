@@ -98,7 +98,7 @@ const solutions = [
     <Popover v-slot="{ open }" class="relative">
       <PopoverButton
         :class="open ? '' : 'text-opacity-90'"
-        class="group inline-flex items-center rounded-md px-3 py-2 text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+        class="group inline-flex items-center rounded-md px-3 py-2 text-base font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
       >
         <UserIcon class="mr-2 h-5 w-5 text-gray-700" />
         <span>Hi Leon</span>
@@ -118,7 +118,7 @@ const solutions = [
         leave-to-class="translate-y-1 opacity-0"
       >
         <PopoverPanel
-          class="absolute right-0 z-50 mt-3 w-64 max-w-sm transform px-3 sm:px-0"
+          class="absolute shadow-xl right-0 z-50 mt-3 w-64 max-w-sm transform px-3 sm:px-0"
         >
           <div
             class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5"
