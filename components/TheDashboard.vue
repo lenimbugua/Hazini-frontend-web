@@ -1,5 +1,4 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 <template>
   <div class="px-4 py-3">
     <div class="text-sm text-[#2C7075] mb-3">Reports</div>
@@ -112,7 +111,6 @@
             />
           </svg>
         </div>
-
         <div class="text-sm">Total collections</div>
       </div>
     </div>
