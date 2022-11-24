@@ -1,11 +1,14 @@
 <script setup lang="ts">
+import { useAuthStore } from "../stores/auth";
+const { createUser } = useAuthStore();
+
 const router = useRouter();
 const goToDashboard = () => {
   router.push("/dashboard");
 };
 </script>
 <template>
-  <form @submit.prevent="goToDashboard" class="w-full max-w-sm">
+  <form @submit.prevent="createUser" class="w-full max-w-sm">
     <div class="mb-6">
       <label
         for="phone"

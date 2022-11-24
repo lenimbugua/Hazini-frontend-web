@@ -17,7 +17,7 @@ const setAuthViewToDisplay = () => {
     <img
       src="@/assets/images/beams-cover@95.jpeg"
       alt=""
-      class="absolute top-0 left-1/2 -ml-[47.5rem] w-[122.5rem] max-w-none"
+      class="absolute top-0 inset-0 left-1/2 -ml-[47.5rem] w-[122.5rem] max-w-none"
     />
     <div
       class="absolute inset-0 text-slate-900/[0.07] [mask-image:linear-gradient(to_bottom_left,white,transparent,transparent)]"

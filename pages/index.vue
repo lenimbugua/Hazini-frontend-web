@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { storeToRefs } from "pinia";
 import { useAuthStore } from "../stores/auth";
 const { viewToDisplay } = storeToRefs(useAuthStore());
 definePageMeta({
