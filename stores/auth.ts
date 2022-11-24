@@ -27,5 +27,22 @@ export const useAuthStore = defineStore("auth-store", {
         console.log(error);
       }
     },
+    login() {
+      try {
+        const { data: products } = useAsyncData(
+          async () =>
+            await $fetch("https://hazini.onrender.com/users/login", {
+              body: {
+                phone_number: "+254704241274",
+                password: "hjjjhhhgg",
+              },
+              method: "POST",
+            })
+        );
+        console.log(products);
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },
 });
