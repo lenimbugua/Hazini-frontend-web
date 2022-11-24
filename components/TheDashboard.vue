@@ -1,21 +1,4 @@
 <script setup lang="ts">
-import { ref } from "vue";
-const login = ref();
-const phone_number = ref();
-const test = async () => {
-  const payload = {};
-
-  try {
-    // const url = `https://hazini.onrender.com/users/login`;
-    // const res = await fetch(url);
-    // const data = await res;
-    // console.log(data);
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-test();
 </script>
 <template>
   <div class="px-4 py-3">

@@ -1,23 +1,8 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
-const test = ref();
 const router = useRouter();
-const loginUser = async () => {
-  console.log(test);
-  const url = `https://hazini.onrender.com/users/login`;
-  try {
-    const res = await fetch(url);
-  } catch (error) {
-    console.log(error);
-  }
-};
-
 const goToDashboard = () => {
   router.push("/dashboard");
 };
-onMounted(() => {
-  loginUser();
-});
 </script>
 <template>
   <form @submit.prevent="goToDashboard" class="w-full max-w-sm">
