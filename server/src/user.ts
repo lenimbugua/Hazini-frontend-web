@@ -1,7 +1,7 @@
-interface CreateUserParams {
-  FullName: string;
-  PhoneNumber: string;
-  Password: string;
+export interface CreateUserParams {
+  full_name: string;
+  phone_number: string;
+  password: string;
 }
 
 export async function add(user: CreateUserParams) {
