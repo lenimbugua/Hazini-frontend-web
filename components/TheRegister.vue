@@ -2,7 +2,7 @@
 import { CreateUserParams } from "~/server/src/user";
 import { removeLeadingZero, addCountryCode } from "~/utils/format-stuff";
 import { useAuthStore } from "../stores/auth";
-const { create: createUser } = useAuthStore();
+const { createUser } = useAuthStore();
 
 const loading = ref(false);
 const { pending } = storeToRefs(useAuthStore());

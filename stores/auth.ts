@@ -17,7 +17,7 @@ export const useAuthStore = defineStore("auth-store", {
     setViewToDisplay(view: string) {
       this.viewToDisplay = view;
     },
-    async create(body: CreateUserParams) {
+    async createUser(body: CreateUserParams) {
       try {
         this.pending = true;
         const { data, error } = await useFetch("/api/auth/create", {
@@ -72,6 +72,12 @@ export const useAuthStore = defineStore("auth-store", {
           async onResponseError({ request, response, options }) {
             if (response.status === 401 || response.status == 400) {
               error = "Invalid phone or password";
+            }
+            if (response.status === 404) {
+              error = "Invalid phone or password";
+            }
+            if (response.status === 500) {
+              error = "Internal server error";
             }
             // Log error
             console.log(
