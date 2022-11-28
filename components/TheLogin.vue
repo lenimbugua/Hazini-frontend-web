@@ -4,7 +4,7 @@ import { removeLeadingZero, addCountryCode } from "~/utils/format-stuff";
 import { useAuthStore } from "../stores/auth";
 
 const { login: loginUser } = useAuthStore();
-const { pending } = storeToRefs(useAuthStore());
+const { pending, error } = storeToRefs(useAuthStore());
 const countryCode = "+254";
 const phoneNumber = ref("");
 const password = ref("");
@@ -71,6 +71,7 @@ const goToDashboard = () => {
         v-model="password"
       />
     </div>
+    <p class="text-red-500">{{ error }}</p>
     <button
       type="submit"
       class="inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 text-sky-50 bg-[#37899A] hover:text-sky-50/80 hover:bg-teal-500 w-full"
