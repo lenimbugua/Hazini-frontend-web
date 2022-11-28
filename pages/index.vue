@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useAuthStore } from "../stores/auth";
+import { useAuthStore } from "../stores/login";
 const { viewToDisplay } = storeToRefs(useAuthStore());
 definePageMeta({
   layout: "auth",

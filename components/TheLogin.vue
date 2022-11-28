@@ -1,20 +1,17 @@
 <script setup lang="ts">
 import { LoginCredentials } from "~/server/src/user";
 import { removeLeadingZero, addCountryCode } from "~/utils/format-stuff";
-import { useAuthStore } from "../stores/auth";
+import { useAuthStore } from "../stores/login";
 
 const { login: loginUser } = useAuthStore();
 const { pending, error } = storeToRefs(useAuthStore());
 const countryCode = "+254";
 const phoneNumber = ref("");
 const password = ref("");
-const loading = ref(false);
 const err = ref("");
 
 const login = async () => {
   const phone = addCountryCode(phoneNumber.value, countryCode);
-
-  loading.value = true;
   const body: LoginCredentials = {
     phone_number: phone,
     password: password.value,
@@ -69,9 +66,10 @@ const goToDashboard = () => {
         aria-required
         required
         v-model="password"
+        minlength="6"
       />
     </div>
-    <p class="text-red-500">{{ error }}</p>
+    <p class="text-red-500 mb-6 text-sm">{{ error }}</p>
     <button
       type="submit"
       class="inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 text-sky-50 bg-[#37899A] hover:text-sky-50/80 hover:bg-teal-500 w-full"
