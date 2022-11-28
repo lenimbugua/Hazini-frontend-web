@@ -74,7 +74,7 @@ export const useAuthStore = defineStore("auth-store", {
               error = "Invalid phone or password";
             }
             if (response.status === 404) {
-              error = "Invalid phone or password";
+              error = "User does not exist in our records";
             }
             if (response.status === 500) {
               error = "Internal server error";
@@ -88,8 +88,8 @@ export const useAuthStore = defineStore("auth-store", {
             );
           },
         });
-        this.error = error;
         this.pending = false;
+        this.error = error;
 
         console.log(data);
         console.log(error);
