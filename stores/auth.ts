@@ -3,11 +3,13 @@ import { LoginCredentials } from "~/server/src/user";
 export interface AuthState {
   viewToDisplay: string;
   pending: boolean;
+  error: string;
 }
 export const useAuthStore = defineStore("auth-store", {
   state: (): AuthState => ({
     viewToDisplay: "LOGIN",
     pending: false,
+    error: "",
   }),
 
   actions: {
@@ -35,11 +37,15 @@ export const useAuthStore = defineStore("auth-store", {
     async login(body: LoginCredentials) {
       try {
         this.pending = true;
-        const { data, error } = await useFetch("/api/auth/login", {
+        let error = "";
+        const { data } = await useFetch("/api/auth/login", {
           method: "post",
           body: body,
 
           async onResponseError({ request, response, options }) {
+            if (response.status === 401 || response.status == 400) {
+              error = "Invalid phone or password";
+            }
             // Log error
             console.log(
               "[fetch response error]",
@@ -49,6 +55,7 @@ export const useAuthStore = defineStore("auth-store", {
             );
           },
         });
+        this.error = error;
         this.pending = false;
 
         console.log(data);
