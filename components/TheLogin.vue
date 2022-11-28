@@ -12,9 +12,11 @@ const loading = ref(false);
 const err = ref("");
 
 const login = async () => {
+  const phone = addCountryCode(phoneNumber.value, countryCode);
+
   loading.value = true;
   const body: LoginCredentials = {
-    phone_number: phoneNumber.value,
+    phone_number: phone,
     password: password.value,
   };
   await loginUser(body);
