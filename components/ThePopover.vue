@@ -2,6 +2,9 @@
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/vue";
 import { ChevronDownIcon } from "@heroicons/vue/20/solid";
 import { UserIcon } from "@heroicons/vue/20/solid";
+import { useAuthStore } from "../stores/login";
+
+const { user } = storeToRefs(useAuthStore());
 
 const solutions = [
   {
@@ -101,7 +104,7 @@ const solutions = [
         class="group inline-flex items-center rounded-md px-3 py-2 text-base font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
       >
         <UserIcon class="mr-2 h-5 w-5 text-gray-700" />
-        <span>Hi Leon</span>
+        <span>Hi {{ user.user.full_name }}!</span>
         <ChevronDownIcon
           :class="open ? '' : 'text-opacity-70'"
           class="ml-2 h-5 w-5 text-[#37899A] transition duration-150 ease-in-out group-hover:text-opacity-80"
