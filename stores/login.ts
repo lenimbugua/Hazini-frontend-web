@@ -95,6 +95,7 @@ export const useAuthStore = defineStore("auth-store", {
         this.pending = false;
         this.error = error;
         this.user = user;
+        this.responseOK = responseOK;
         console.log(data);
         console.log(error);
       } catch (error) {

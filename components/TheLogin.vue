@@ -17,6 +17,7 @@ const login = async () => {
   };
   await loginUser(body);
   if (responseOK.value) {
+    console.log("hereeee");
     navigateTo("/dashboard");
   }
 };
