@@ -4,11 +4,10 @@ import { removeLeadingZero, addCountryCode } from "~/utils/format-stuff";
 import { useAuthStore } from "../stores/login";
 
 const { login: loginUser } = useAuthStore();
-const { pending, error } = storeToRefs(useAuthStore());
+const { pending, error, responseOK } = storeToRefs(useAuthStore());
 const countryCode = "+254";
 const phoneNumber = ref("");
 const password = ref("");
-const err = ref("");
 
 const login = async () => {
   const phone = addCountryCode(phoneNumber.value, countryCode);
@@ -17,11 +16,9 @@ const login = async () => {
     password: password.value,
   };
   await loginUser(body);
-};
-
-const router = useRouter();
-const goToDashboard = () => {
-  router.push("/dashboard");
+  if (responseOK.value) {
+    navigateTo("/dashboard");
+  }
 };
 </script>
 <template>

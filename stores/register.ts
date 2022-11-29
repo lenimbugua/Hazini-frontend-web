@@ -9,6 +9,7 @@ export interface CreateUserError {
 export interface CreateUserState {
   pending: boolean;
   error: CreateUserError;
+  responseOK: boolean;
 }
 export const useCreateUserStore = defineStore("create-user-store", {
   state: (): CreateUserState => ({
@@ -18,6 +19,7 @@ export const useCreateUserStore = defineStore("create-user-store", {
       message: "",
       field: "",
     },
+    responseOK: false,
   }),
 
   actions: {
@@ -30,9 +32,20 @@ export const useCreateUserStore = defineStore("create-user-store", {
           field: "",
         };
         this.error = error;
+        let responseOK = false;
+        this.responseOK = responseOK;
         const { data } = await useFetch("/api/auth/create", {
           method: "post",
           body: body,
+
+          async onResponse({ request, response, options }) {
+            console.log(response);
+            console.log(response.ok);
+            // Process the response data
+            if (response.ok) {
+              responseOK = true;
+            }
+          },
 
           async onResponseError({ request, response, options }) {
             if (response.status == 400) {
@@ -67,7 +80,7 @@ export const useCreateUserStore = defineStore("create-user-store", {
         });
         this.pending = false;
         this.error = error;
-
+        this.responseOK = responseOK;
         console.log(data);
         console.log(error);
       } catch (err) {

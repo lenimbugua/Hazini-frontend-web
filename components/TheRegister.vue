@@ -2,20 +2,19 @@
 import { CreateUserParams } from "~/server/src/user";
 import { removeLeadingZero, addCountryCode } from "~/utils/format-stuff";
 import { useCreateUserStore } from "../stores/register";
+
+import { useAuthStore } from "../stores/login";
+const { setViewToDisplay } = useAuthStore();
+
 const { createUser } = useCreateUserStore();
 
 const loading = ref(false);
-const { pending, error } = storeToRefs(useCreateUserStore());
+const { pending, error, responseOK } = storeToRefs(useCreateUserStore());
 
 const countryCode = "+254";
 const fullNames = ref("");
 const phoneNumber = ref("");
 const password = ref("");
-
-const router = useRouter();
-const goToDashboard = () => {
-  router.push("/dashboard");
-};
 
 const register = async () => {
   const phone = addCountryCode(phoneNumber.value, countryCode);
@@ -25,6 +24,9 @@ const register = async () => {
     password: password.value,
   };
   await createUser(body);
+  if (responseOK.value) {
+    setViewToDisplay("LOGIN");
+  }
 };
 </script>
 <template>
