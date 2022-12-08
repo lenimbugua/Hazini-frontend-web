@@ -1,17 +1,17 @@
-import { CreateUserParams } from "~/server/src/user";
+import { CreateCompanyParams } from "~/server/src/company";
 
-export interface CreateUserError {
+export interface CreateCompanyError {
   hasError: boolean;
   message: string;
   field: string;
 }
-export interface CreateUserState {
+export interface CreateCompanyState {
   pending: boolean;
-  error: CreateUserError;
+  error: CreateCompanyError;
   responseOK: boolean;
 }
-export const useCreateUserStore = defineStore("create-user-store", {
-  state: (): CreateUserState => ({
+export const useCreateCompanyStore = defineStore("create-company-store", {
+  state: (): CreateCompanyState => ({
     pending: false,
     error: {
       hasError: false,
@@ -22,7 +22,7 @@ export const useCreateUserStore = defineStore("create-user-store", {
   }),
 
   actions: {
-    async createUser(body: CreateUserParams) {
+    async createCompany(body: CreateCompanyParams, accessToken: string) {
       try {
         this.pending = true;
         let error = {
@@ -33,9 +33,10 @@ export const useCreateUserStore = defineStore("create-user-store", {
         this.error = error;
         let responseOK = false;
         this.responseOK = responseOK;
-        const { data } = await useFetch("/api/auth/create", {
+
+        const { data } = await useFetch("/api/company/create", {
           method: "post",
-          body: body,
+          body: {  body,  accessToken },
 
           async onResponse({ request, response, options }) {
             console.log(response);

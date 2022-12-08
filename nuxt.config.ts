@@ -17,7 +17,7 @@ export default defineNuxtConfig({
       },
     ],
   ],
-  runtimeConfig:{
-    
-  }
+  runtimeConfig: {
+    baseURL: "https://hazini.onrender.com",
+  },
 });
