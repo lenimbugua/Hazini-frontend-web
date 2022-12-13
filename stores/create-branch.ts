@@ -1,17 +1,17 @@
-import { CreateUserParams } from "~/server/src/user";
+import { CreateBranchParams } from "~/server/src/branch";
 
-export interface CreateUserError {
+export interface CreateBranchError {
   hasError: boolean;
   message: string;
   field: string;
 }
-export interface CreateUserState {
+export interface CreateBranchState {
   pending: boolean;
-  error: CreateUserError;
+  error: CreateBranchError;
   responseOK: boolean;
 }
-export const useCreateUserStore = defineStore("create-user-store", {
-  state: (): CreateUserState => ({
+export const useCreateBranchStore = defineStore("create-branch-store", {
+  state: (): CreateBranchState => ({
     pending: false,
     error: {
       hasError: false,
@@ -22,7 +22,7 @@ export const useCreateUserStore = defineStore("create-user-store", {
   }),
 
   actions: {
-    async createUser(body: CreateUserParams) {
+    async createBranch(body: CreateBranchParams, accessToken: string) {
       try {
         this.pending = true;
         let error = {
@@ -33,9 +33,10 @@ export const useCreateUserStore = defineStore("create-user-store", {
         this.error = error;
         let responseOK = false;
         this.responseOK = responseOK;
-        const { data } = await useFetch("/api/users/create", {
+
+        const { data } = await useFetch("/api/branch/create", {
           method: "post",
-          body: body,
+          body: { body, accessToken },
 
           async onResponse({ request, response, options }) {
             console.log(response);

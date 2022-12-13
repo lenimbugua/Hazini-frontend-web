@@ -1,13 +1,13 @@
 const runtimeConfig = useRuntimeConfig();
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
-  const company = await $fetch("/companies", {
+  const createdUser = await fetch("http://localhost/users/bulk", {
     headers: {
+      "Content-Type": "multipart/form-data",
       Authorization: `Bearer ${body.accessToken}`,
     },
-    body:body.body,
+    body: body.body,
     method: "POST",
-    baseURL: runtimeConfig.baseURL,
   });
-  return company;
+  return createdUser;
 });

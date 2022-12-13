@@ -1,6 +1,6 @@
 <template>
   <TheBranches />
-  <NuxtLink to="/companies/add">
+  <NuxtLink to="/branches/add">
     <PlusButton />
   </NuxtLink>
 </template>

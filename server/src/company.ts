@@ -8,3 +8,8 @@ export interface CreateCompanyParams {
   status: number;
   profit_share_percent: number;
 }
+
+export interface ListCompaniesParams {
+  page_size: number;
+  page_id: number;
+}

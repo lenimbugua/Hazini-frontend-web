@@ -9,7 +9,7 @@
         <template #title> <slot name="title" /></template>
         <template #main> <slot /></template>
       </TheMain>
-      <TheFooter />
+      <!--<TheFooter />-->
     </div>
   </div>
 </template>
