@@ -17,6 +17,7 @@ const {
     accessToken: user.value.refresh_token,
   },
 });
+console.log(users.value);
 
 refresh();
 </script>
@@ -103,7 +104,11 @@ refresh();
         </tr>
       </thead>
       <tbody class="bg-white divide-y divide-gray-200">
-        <tr v-for="(user, index) in users" :key="index">
+        <tr
+          class="hover:bg-teal-50 cursor-pointer"
+          v-for="(user, index) in users"
+          :key="index"
+        >
           <td class="px-6 py-4 whitespace-nowrap">
             <div class="items-center">
               <div class="ml-4">

@@ -87,6 +87,7 @@ refresh();
       </thead>
       <tbody class="bg-white divide-y divide-gray-200">
         <tr
+        class="hover:bg-teal-50 cursor-pointer"
           v-for="(company, index) in data"
           :key="company.id"
           :class="{ 'bg-gray-50': index % 2 == 1 }"
