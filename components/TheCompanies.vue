@@ -42,7 +42,7 @@ refresh();
             scope="col"
             class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
           >
-            #Employees
+            Employees
           </th>
           <th
             scope="col"
@@ -87,7 +87,7 @@ refresh();
       </thead>
       <tbody class="bg-white divide-y divide-gray-200">
         <tr
-        class="hover:bg-teal-50 cursor-pointer"
+          class="hover:bg-teal-50 cursor-pointer"
           v-for="(company, index) in data"
           :key="company.id"
           :class="{ 'bg-gray-50': index % 2 == 1 }"

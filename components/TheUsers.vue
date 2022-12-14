@@ -2,7 +2,7 @@
 import { useAuthStore } from "../stores/login";
 
 const { user } = storeToRefs(useAuthStore());
-
+const test = ref();
 const pageSize = ref(10);
 const pageID = ref(1);
 const {
@@ -19,10 +19,13 @@ const {
 });
 console.log(users.value);
 refresh();
+const submit = async () => {
+  console.log(test);
+};
 </script>
 <template>
   <div class="flex justify-end">
-    <form>
+    <form @submit.prevent="submit" class="w-1/4">
       <label
         for="default-search"
         class="mb-2 text-sm font-medium text-gray-500 sr-only dark:text-white"
@@ -55,15 +58,32 @@ refresh();
           placeholder="Search PhoneNumber..."
           required
         />
+
         <button
           type="submit"
-          class="text-white absolute right-2.5 bottom-2.5 bg-cyan-600 hover:bg-cyan-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-400"
+          class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-cyan-700 rounded-r-lg border border-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800"
         >
-          Search
+          <svg
+            aria-hidden="true"
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            ></path>
+          </svg>
+          <span class="sr-only">Search</span>
         </button>
       </div>
     </form>
   </div>
+  <br />
   <Spin v-if="pending" class="h-20 w-20 text-teal-700" />
   <div
     v-else
