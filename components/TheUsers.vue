@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup >
 import { useAuthStore } from "../stores/login";
 
 const { user } = storeToRefs(useAuthStore());
