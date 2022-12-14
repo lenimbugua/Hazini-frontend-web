@@ -38,7 +38,7 @@ export const useCreateUsersBulkStore = defineStore("create-users-bulk-store", {
         this.results = null;
         const { data } = await axios({
           method: "post",
-          url: "http://localhost:8080/users/bulk",
+          url: "https://hazini.onrender.com/users/bulk",
           data: body,
           headers: {
             Authorization: `Bearer ${accessToken}`,
