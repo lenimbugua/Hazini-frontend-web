@@ -1,7 +1,33 @@
+<script setup lang="ts">
+import { useAuthStore } from "../stores/login";
+
+const { user } = storeToRefs(useAuthStore());
+
+const pageSize = ref(10);
+const pageID = ref(1);
+const {
+  data: users,
+  pending,
+  error,
+  refresh,
+} = await useFetch("/api/users/list", {
+  query: {
+    pageSize: pageSize.value,
+    pageID: pageID.value,
+    accessToken: user.value.refresh_token,
+  },
+});
+
+refresh();
+</script>
 <template>
-  <div class="shadow overflow-scroll border-b border-gray-200 sm:rounded-lg">
+  <Spin v-if="pending" class="h-20 w-20 text-teal-700" />
+  <div
+    v-else
+    class="shadow overflow-scroll border-b border-gray-200 sm:rounded-lg"
+  >
     <table class="min-w-full divide-y divide-gray-200">
-      <thead class="bg-gray-50">
+      <thead class="bg-gray-200">
         <tr>
           <th
             scope="col"
@@ -77,43 +103,47 @@
         </tr>
       </thead>
       <tbody class="bg-white divide-y divide-gray-200">
-        <tr>
+        <tr v-for="(user, index) in users" :key="index">
           <td class="px-6 py-4 whitespace-nowrap">
             <div class="items-center">
               <div class="ml-4">
-                <div class="text-sm font-medium text-gray-900">1</div>
+                <div class="text-sm font-medium text-gray-900">
+                  {{ user.full_name }}
+                </div>
               </div>
             </div>
           </td>
           <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">fhhfgh</div>
+            <div class="text-sm text-gray-900">{{ user.phone_number }}</div>
           </td>
           <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jfjfjf</div>
+            <div class="text-sm text-gray-900">
+              {{ user.national_id_number }}
+            </div>
           </td>
           <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jhdfhfj</div>
+            <div class="text-sm text-gray-900">{{ user.net_salary }}</div>
           </td>
           <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jhdfhfj</div>
+            <div class="text-sm text-gray-900">null</div>
           </td>
           <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jhdfhfj</div>
+            <div class="text-sm text-gray-900">null</div>
           </td>
           <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jhdfhfj</div>
+            <div class="text-sm text-gray-900">{{ user.company_id }}</div>
           </td>
           <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jhdfhfj</div>
+            <div class="text-sm text-gray-900">{{ user.branch_id }}</div>
           </td>
           <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jhdfhfj</div>
+            <div class="text-sm text-gray-900">{{ user.assignment }}</div>
           </td>
           <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jhdfhfj</div>
+            <div class="text-sm text-gray-900">{{ user.status }}</div>
           </td>
           <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jhdfhfj</div>
+            <div class="text-sm text-gray-900">{{ user.created_at }}</div>
           </td>
           <td
             class="flex divide-x divide-blue-500 space-x-1 pr-2 py-4 whitespace-nowrap text-center text-sm font-medium"

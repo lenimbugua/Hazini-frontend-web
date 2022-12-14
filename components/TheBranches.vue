@@ -16,9 +16,15 @@ const {
     accessToken: user.value.refresh_token,
   },
 });
+
+refresh();
 </script>
 <template>
-  <div class="shadow overflow-scroll border-b border-gray-200 sm:rounded-lg">
+  <Spin v-if="pending" class="h-20 w-20 text-teal-700" />
+  <div
+    v-else
+    class="shadow overflow-scroll border-b border-gray-200 sm:rounded-lg"
+  >
     <table class="min-w-full divide-y divide-gray-200">
       <thead class="bg-gray-200">
         <tr>
@@ -64,6 +70,7 @@ const {
       </thead>
       <tbody class="bg-white divide-y divide-gray-200">
         <tr
+          class="hover:bg-teal-50 cursor-pointer"
           v-for="(branch, index) in branches"
           :key="index"
           :class="{ 'bg-gray-50': index % 2 == 1 }"

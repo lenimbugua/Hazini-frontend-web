@@ -15,10 +15,14 @@ const { data, pending, error, refresh } = await useFetch("/api/company/list", {
     accessToken: user.value.refresh_token,
   },
 });
+refresh();
 </script>
 <template>
-  <Spin v-if="pending" />
-  <div class="shadow overflow-scroll border-b border-gray-200 sm:rounded-lg">
+  <Spin v-if="pending" class="h-20 w-20 text-teal-700" />
+  <div
+    v-else
+    class="shadow overflow-scroll border-b border-gray-200 sm:rounded-lg"
+  >
     <table class="min-w-full divide-y divide-gray-200">
       <thead class="bg-gray-200">
         <tr>
