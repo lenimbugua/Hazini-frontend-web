@@ -18,6 +18,6 @@ export default defineNuxtConfig({
     ],
   ],
   runtimeConfig: {
-    baseURL: "https://hazini.onrender.com",
+    baseURL: "http://localhost:8080",
   },
 });

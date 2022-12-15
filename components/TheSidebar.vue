@@ -1,5 +1,5 @@
 <template>
-  <div class="block">
+  <div class="block h-screen overflow-y-scroll">
     <div class="w-full p-3">
       <LazyTheLogo />
     </div>

@@ -54,7 +54,7 @@ refresh();
             scope="col"
             class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
           >
-            #Employees
+            Employees
           </th>
 
           <th
