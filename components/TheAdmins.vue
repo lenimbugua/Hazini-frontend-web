@@ -1,109 +1,44 @@
 <template>
-  <div class="shadow overflow-scroll border-b border-gray-200 sm:rounded-lg">
-    <table class="min-w-full divide-y divide-gray-200">
-      <thead class="bg-gray-50">
-        <tr>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Name
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Phone
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            ID number
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-          Email
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Company
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Branch
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Status
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Approver
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Created At
-          </th>
-          <th scope="col" class="relative px-2 py-3">
-            <span class="tracking-wide sr-only">Edit and or Delete</span>
-          </th>
+  <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left text-gray-500">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-200">
+        <tr class="divide-x divide-gray-300">
+          <th scope="col" class="py-3 px-6"></th>
+          <th scope="col" class="py-3 px-6">Admin Name</th>
+          <th scope="col" class="py-3 px-6">Phone Number</th>
+          <th scope="col" class="py-3 px-6">Id Number</th>
+          <th scope="col" class="py-3 px-6">Email Address</th>
+          <th scope="col" class="py-3 px-6">Company</th>
+          <th scope="col" class="py-3 px-6">Branch</th>
+          <th scope="col" class="py-3 px-6">Status</th>
+          <th scope="col" class="py-3 px-6">Approver</th>
+          <th scope="col" class="py-3 px-6">Created At</th>
+          <th scope="col" class="py-3 px-6">Edit</th>
+          <th scope="col" class="py-3 px-6">Delete</th>
         </tr>
       </thead>
-      <tbody class="bg-white divide-y divide-gray-200">
-        <tr>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="items-center">
-              <div class="ml-4">
-                <div class="text-sm font-medium text-gray-900">1</div>
-              </div>
-            </div>
+      <tbody class="divide-y">
+        <tr class="bg-white border-b divide-x hover:bg-teal-50 cursor-pointer">
+          <td class="py-4 px-6"></td>
+          <td class="py-4 px-6">branch</td>
+          <td class="py-4 px-6">branch</td>
+          <td class="py-4 px-6">branch</td>
+          <td class="py-4 px-6">branch</td>
+          <td class="py-4 px-6">branch</td>
+          <td class="py-4 px-6">branch</td>
+          <td class="py-4 px-6">branch</td>
+          <td class="py-4 px-6">branch</td>
+          <td class="py-4 px-6">branch</td>
+
+          <td class="py-4 px-6">
+            <a href="#" class="font-medium text-blue-600 hover:underline"
+              >Edit</a
+            >
           </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">fhhfgh</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jfjfjf</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jhdfhfj</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jhdfhfj</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jhdfhfj</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jhdfhfj</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jhdfhfj</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jhdfhfj</div>
-          </td>
-          <td
-            class="flex divide-x divide-blue-500 space-x-1 pr-2 py-4 whitespace-nowrap text-center text-sm font-medium"
-          >
-            <div class="cursor-pointer text-indigo-600 hover:text-indigo-900">
-              Edit
-            </div>
-            <div class="text-red-600 hover:text-indigo-900 cursor-pointer">
-              Delete
-            </div>
+          <td class="py-4 px-6">
+            <a href="#" class="font-medium text-blue-600 hover:underline"
+              >Diactivate</a
+            >
           </td>
         </tr>
       </tbody>

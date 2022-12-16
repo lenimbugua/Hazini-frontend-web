@@ -1,124 +1,46 @@
 <template>
-  <div class="shadow overflow-scroll border-b border-gray-200 sm:rounded-lg">
-    <table class="min-w-full divide-y divide-gray-200">
-      <thead class="bg-gray-50">
-        <tr>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Name
-          </th>
-
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Interest
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Duration
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Installments
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Max Amount
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Max Percentage
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Transaction Cost
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Company
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Created At
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Taken At
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Edit
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Delete
-          </th>
+  <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left text-gray-500">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-200">
+        <tr class="divide-x divide-gray-300">
+          <th scope="col" class="py-3 px-6"></th>
+          <th scope="col" class="py-3 px-6">Name</th>
+          <th scope="col" class="py-3 px-6">Interest</th>
+          <th scope="col" class="py-3 px-6">Duration</th>
+          <th scope="col" class="py-3 px-6">Insatllments</th>
+          <th scope="col" class="py-3 px-6">Max.Amount</th>
+          <th scope="col" class="py-3 px-6">Max.Percent</th>
+          <th scope="col" class="py-3 px-6">Transaction Cost</th>
+          <th scope="col" class="py-3 px-6">Company</th>
+          <th scope="col" class="py-3 px-6">Total Amount</th>
+          <th scope="col" class="py-3 px-6">Taken.At</th>
+          <th scope="col" class="py-3 px-6">Edit</th>
+          <th scope="col" class="py-3 px-6">Disable</th>
         </tr>
       </thead>
-      <tbody class="bg-white divide-y divide-gray-200">
-        <tr>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="items-center">
-              <div class="ml-4">
-                <div class="text-sm font-medium text-gray-900">1</div>
-              </div>
-            </div>
+      <tbody class="divide-y">
+        <tr class="bg-white border-b divide-x hover:bg-teal-50 cursor-pointer">
+          <td class="py-4 px-6">1</td>
+          <td class="py-4 px-6">branch</td>
+          <td class="py-4 px-6">branch</td>
+          <td class="py-4 px-6">branch</td>
+          <td class="py-4 px-6">branch</td>
+          <td class="py-4 px-6">branch</td>
+          <td class="py-4 px-6">branch</td>
+          <td class="py-4 px-6">branch</td>
+          <td class="py-4 px-6">branch</td>
+          <td class="py-4 px-6">branch</td>
+          <td class="py-4 px-6">branch</td>
+
+          <td class="py-4 px-6">
+            <a href="#" class="font-medium text-blue-600 hover:underline"
+              >Edit</a
+            >
           </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">fhhfgh</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jfjfjf</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jhdfhfj</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jhdfhfj</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jhdfhfj</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jhdfhfj</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jhdfhfj</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jhdfhfj</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jhdfhfj</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jhdfhfj</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">jhdfhfj</div>
+          <td class="py-4 px-6">
+            <a href="#" class="font-medium text-blue-600 hover:underline"
+              >Diactivate</a
+            >
           </td>
         </tr>
       </tbody>
