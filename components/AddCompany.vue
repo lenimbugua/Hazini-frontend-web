@@ -4,6 +4,7 @@ import { useCreateCompanyStore } from "../stores/create-company";
 import { useAuthStore } from "../stores/login";
 
 const { createCompany } = useCreateCompanyStore();
+const { pending, error, responseOK } = storeToRefs(useCreateCompanyStore());
 const { user } = storeToRefs(useAuthStore());
 
 const name = ref("");
@@ -15,7 +16,7 @@ const approvesLoan = ref(false);
 const status = ref(1);
 const profitSharePercent = ref(0);
 
-const createNewCompany = () => {
+const createNewCompany = async () => {
   const accessToken = user.value.refresh_token;
   const company: CreateCompanyParams = {
     name: name.value,
@@ -27,7 +28,10 @@ const createNewCompany = () => {
     status: status.value,
     profit_share_percent: profitSharePercent.value,
   };
-  createCompany(company, accessToken);
+  await createCompany(company, accessToken);
+  if (responseOK.value) {
+    navigateTo("/companies");
+  }
 };
 
 const title = ref("Add Company"); // change current title
@@ -141,7 +145,8 @@ const title = ref("Add Company"); // change current title
         type="submit"
         class="inline-flex rounded-lg text-sm font-semibold py-2.5 px-4 text-sky-50 bg-cyan-600 hover:text-sky-50/80 hover:bg-cyan-400"
       >
-        <span>Add Company</span>
+        <spin v-if="pending" />
+        <span v-else>Add Company</span>
       </button>
     </form>
   </div>

@@ -1,6 +1,9 @@
-<script setup>
+<script setup lang="ts">
 import { useAuthStore } from "../stores/login";
+import { useDateFormat } from "@vueuse/core";
+import { EllipsisHorizontalIcon } from "@heroicons/vue/20/solid";
 
+const formatter = ref("MM/DD/YYYY");
 const { user } = storeToRefs(useAuthStore());
 const test = ref();
 const pageSize = ref(10);
@@ -17,18 +20,15 @@ const {
     accessToken: user.value.refresh_token,
   },
 });
-console.log(users.value);
 refresh();
-const submit = async () => {
-  console.log(test);
-};
+const formatDate = (date: Date) => useDateFormat(date, formatter);
 </script>
 <template>
   <div class="flex justify-end">
-    <form @submit.prevent="submit" class="w-1/4">
+    <form class="mb-3 w-1/3">
       <label
         for="default-search"
-        class="mb-2 text-sm font-medium text-gray-500 sr-only dark:text-white"
+        class="mb-2 text-sm font-medium text-gray-900 sr-only"
         >Search</label
       >
       <div class="relative">
@@ -37,7 +37,7 @@ const submit = async () => {
         >
           <svg
             aria-hidden="true"
-            class="w-5 h-5 text-gray-500 dark:text-gray-400"
+            class="w-5 h-5 text-gray-500"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -54,31 +54,15 @@ const submit = async () => {
         <input
           type="search"
           id="default-search"
-          class="block w-full p-4 pl-10 text-sm text-gray-400 border border-cyan-300 rounded-lg bg-gray-50 focus:ring-cyan-500 focus:border-cyan-500 dark:bg-white-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500"
-          placeholder="Search PhoneNumber..."
+          class="block w-full p-3 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:outline-teal-700 focus:ring-teal-500 focus:border-0"
+          placeholder="Search users..."
           required
         />
-
         <button
           type="submit"
-          class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-cyan-700 rounded-r-lg border border-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800"
+          class="text-white absolute right-2.5 bottom-2.5 bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-2 py-1"
         >
-          <svg
-            aria-hidden="true"
-            class="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            ></path>
-          </svg>
-          <span class="sr-only">Search</span>
+          Search
         </button>
       </div>
     </form>
@@ -89,141 +73,66 @@ const submit = async () => {
     v-else
     class="shadow overflow-scroll border-b border-gray-200 sm:rounded-lg"
   >
-    <table class="min-w-full divide-y divide-gray-200">
-      <thead class="bg-gray-200">
-        <tr>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
+    <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+      <table class="w-full text-sm text-left text-gray-500">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-200">
+          <tr class="divide-x divide-gray-300">
+            <th scope="col" class="py-3 px-6"></th>
+            <th scope="col" class="py-3 px-6">User name</th>
+            <th scope="col" class="py-3 px-6">Phone Number</th>
+            <th scope="col" class="py-3 px-6">ID number</th>
+            <th scope="col" class="py-3 px-6">Salary</th>
+            <th scope="col" class="py-3 px-6">Loan</th>
+            <th scope="col" class="py-3 px-6">Balance</th>
+            <th scope="col" class="py-3 px-6">Company</th>
+            <th scope="col" class="py-3 px-6">Branch</th>
+            <th scope="col" class="py-3 px-6">Assignment</th>
+            <th scope="col" class="py-3 px-6">Status</th>
+            <th scope="col" class="py-3 px-6">Created at</th>
+            <th scope="col" class="py-3 px-6">Enable/Disable</th>
+            <th scope="col" class="py-3 px-6">Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            v-for="(user, index) in users"
+            :key="user.phone_number"
+            :class="{ 'bg-gray-50': index % 2 === 1 }"
+            class="bg-white border-b divide-x hover:bg-teal-50 cursor-pointer"
           >
-            Name
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Phone
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            ID Number
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Salary
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Loan
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Balance
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Company
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Branch
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Assignment
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Status
-          </th>
-          <th
-            scope="col"
-            class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-          >
-            Created At
-          </th>
-          <th scope="col" class="relative px-2 py-3">
-            <span class="tracking-wide sr-only"
-              >Deactivate and or View Details</span
+            <th
+              scope="row"
+              class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap"
             >
-          </th>
-        </tr>
-      </thead>
-      <tbody class="bg-white divide-y divide-gray-200">
-        <tr
-          class="hover:bg-teal-50 cursor-pointer"
-          v-for="(user, index) in users"
-          :key="index"
-        >
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="items-center">
-              <div class="ml-4">
-                <div class="text-sm font-medium text-gray-900">
-                  {{ user.full_name }}
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">{{ user.phone_number }}</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">
-              {{ user.national_id_number }}
-            </div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">{{ user.net_salary }}</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">null</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">null</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">{{ user.company_id }}</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">{{ user.branch_id }}</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">{{ user.assignment }}</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">{{ user.status }}</div>
-          </td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <div class="text-sm text-gray-900">{{ user.created_at }}</div>
-          </td>
-          <td
-            class="flex divide-x divide-blue-500 space-x-1 pr-2 py-4 whitespace-nowrap text-center text-sm font-medium"
-          >
-            <div class="cursor-pointer text-indigo-600 hover:text-indigo-900">
-              Deactivate
-            </div>
-            <div class="text-red-600 hover:text-indigo-900 cursor-pointer">
-              Details
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              {{ index + 1 }}
+            </th>
+            <td class="py-4 px-6">{{ user.full_name }}</td>
+            <td class="py-4 px-6">{{ user.phone_number }}</td>
+            <td class="py-4 px-6">{{ user.national_id_number }}</td>
+            <td class="py-4 px-6">{{ user.net_salary }}</td>
+            <td class="py-4 px-6">{{ user.loan_amount }}</td>
+            <td class="py-4 px-6">{{ user.balance }}</td>
+            <td class="py-4 px-6">{{ user.company_name }}</td>
+            <td class="py-4 px-6">{{ user.branch_name }}</td>
+            <td class="py-4 px-6">{{ user.assignment }}</td>
+            <td class="py-4 px-6">{{ user.user_status }}</td>
+            <td class="py-4 px-6">{{ formatDate(user.created_at) }}</td>
+            <td class="py-4 px-6">
+              <label
+                class="inline-flex relative items-center mr-5 cursor-pointer"
+              >
+                <input type="checkbox" value="" class="sr-only peer" checked />
+                <div
+                  class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-600"
+                ></div>
+              </label>
+            </td>
+            <td class="py-4 px-6 cursor-pointer">
+              <EllipsisHorizontalIcon class="text-teal-700 h-6 w-6" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>

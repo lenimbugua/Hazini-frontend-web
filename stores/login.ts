@@ -103,6 +103,10 @@ export const useAuthStore = defineStore("auth-store", {
         console.log(error);
       }
     },
+    logout() {
+      //reset user
+      this.user = user;
+    },
   },
   hydrate(state, initialState) {
     // in this case we can completely ignore the initial state since we

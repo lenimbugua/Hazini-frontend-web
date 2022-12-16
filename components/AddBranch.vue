@@ -4,8 +4,12 @@ import { useCreateBranchStore } from "../stores/create-branch";
 import { useAuthStore } from "../stores/login";
 
 const { createBranch } = useCreateBranchStore();
+const {
+  pending: addBranchIsPending,
+  error: addBranchIsErroring,
+  responseOK,
+} = storeToRefs(useCreateBranchStore());
 const { user } = storeToRefs(useAuthStore());
-
 
 const {
   data: companies,
@@ -26,7 +30,7 @@ const numberOfEmployees = ref(0);
 const status = ref(1);
 const companyID = ref(0);
 
-const createNewBranch = () => {
+const createNewBranch = async () => {
   const accessToken = user.value.refresh_token;
   const branch: CreateBranchParams = {
     name: name.value,
@@ -35,7 +39,10 @@ const createNewBranch = () => {
     status: status.value,
     company_id: companyID.value,
   };
-  createBranch(branch, accessToken);
+  await createBranch(branch, accessToken);
+  if (responseOK.value) {
+    navigateTo("/branches");
+  }
 };
 
 const title = ref("Add Company"); // change current title
@@ -104,7 +111,8 @@ const title = ref("Add Company"); // change current title
         type="submit"
         class="inline-flex rounded-lg text-sm font-semibold py-2.5 px-4 text-sky-50 bg-cyan-600 hover:text-sky-50/80 hover:bg-cyan-400"
       >
-        <span>Add Company</span>
+        <spin v-if="addBranchIsPending" />
+        <span v-else>Add Branch</span>
       </button>
     </form>
   </div>
