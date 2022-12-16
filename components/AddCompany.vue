@@ -125,21 +125,13 @@ const title = ref("Add Company"); // change current title
         />
       </div>
       <div class="mb-3">
-        <label
-          for="physical-address"
-          class="block text-sm font-semibold leading-6 text-gray-900"
-          >Should loans be approved?</label
-        >
-        <div class="flex space-x-3 mt-2 mb-3">
-          <input
-            type="checkbox"
-            id="physical-address"
-            class="text-slate-900 bg-[#2C7075] rounded-md block w-10 px-3 h-10 sm:text-sm focus:outline-none placeholder:text-slate-400"
-            aria-required
-            v-model="approvesLoan"
-          />
-          <div class="text-[#2C7075]">{{ approvesLoan }}</div>
-        </div>
+        <label class="inline-flex relative items-center mr-5 cursor-pointer">
+          <input type="checkbox" class="sr-only peer" v-model="approvesLoan" />
+          <div
+            class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-600"
+          ></div>
+          <div class="text-[#2C7075] ml-3">{{ approvesLoan }}</div>
+        </label>
       </div>
       <button
         type="submit"
