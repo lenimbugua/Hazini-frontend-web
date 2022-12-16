@@ -104,7 +104,7 @@ const formatDate = (date: Date) => useDateFormat(date, formatter);
               scope="row"
               class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap"
             >
-              {{ index + 1 }}
+              {{ index +1 }}
             </th>
             <td class="py-4 px-6">{{ user.full_name }}</td>
             <td class="py-4 px-6">{{ user.phone_number }}</td>
@@ -115,7 +115,7 @@ const formatDate = (date: Date) => useDateFormat(date, formatter);
             <td class="py-4 px-6">{{ user.company_name }}</td>
             <td class="py-4 px-6">{{ user.branch_name }}</td>
             <td class="py-4 px-6">{{ user.assignment }}</td>
-            <td class="py-4 px-6">{{ user.user_status }}</td>
+            <td class="py-4 px-6">{{ user.status }}</td>
             <td class="py-4 px-6">{{ formatDate(user.created_at) }}</td>
             <td class="py-4 px-6">
               <label
