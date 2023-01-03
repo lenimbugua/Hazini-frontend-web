@@ -15,11 +15,13 @@ const countryCode = "+254";
 const fullNames = ref("");
 const phoneNumber = ref("");
 const password = ref("");
+const username = ref("");
 
 const register = async () => {
   const phone = addCountryCode(phoneNumber.value, countryCode);
   const body: CreateUserParams = {
-    full_name: fullNames.value,
+    username: username.value,
+    full_names: fullNames.value,
     phone_number: phone,
     password: password.value,
   };
@@ -31,6 +33,21 @@ const register = async () => {
 </script>
 <template>
   <form @submit.prevent="register" class="w-full max-w-sm">
+    <div class="mb-6">
+      <label
+        for="full_names"
+        class="block text-sm font-semibold leading-6 text-gray-900"
+        >Username</label
+      ><input
+        type="text"
+        name="full_names"
+        id="full_names"
+        placeholder="username@example.com"
+        class="mt-2 appearance-none text-slate-900 bg-white rounded-md block w-full px-3 h-10 shadow-sm sm:text-sm focus:outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-[#37899A] ring-1 ring-slate-200"
+        required
+        v-model="username"
+      />
+    </div>
     <div class="mb-6">
       <label
         for="full_names"

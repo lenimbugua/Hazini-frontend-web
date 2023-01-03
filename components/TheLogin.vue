@@ -6,13 +6,13 @@ import { useAuthStore } from "../stores/login";
 const { login: loginUser } = useAuthStore();
 const { pending, error, responseOK } = storeToRefs(useAuthStore());
 const countryCode = "+254";
-const phoneNumber = ref("");
+const username = ref("");
 const password = ref("");
 
 const login = async () => {
-  const phone = addCountryCode(phoneNumber.value, countryCode);
+  //   const phone = addCountryCode(phoneNumber.value, countryCode);
   const body: LoginCredentials = {
-    phone_number: phone,
+    username: username.value,
     password: password.value,
   };
   await loginUser(body);
@@ -26,29 +26,19 @@ const login = async () => {
   <form @submit.prevent="login" class="w-full max-w-sm">
     <div class="mb-6">
       <label
-        for="phone"
+        for="username"
         class="block text-sm font-semibold leading-6 text-gray-900"
-        >Phone Number</label
+        >username</label
       >
-      <div
-        class="rounded-md w-full h-10 bg-gray-200 sm:text-sm flex border border-slate-200"
-      >
-        <div
-          class="flex text-center h-full items-center justify-center pl-2 pr-1"
-        >
-          +254
-        </div>
-        <input
-          type="tel"
-          placeholder="7000000"
-          name="phone"
-          pattern="[1-9]{1}[0-9]{1}[0-9]{3}[0-9]{4}"
-          id="phone"
-          class="appearance-none px-1 text-slate-900 w-full h-full rounded-r-md bg-white block focus:outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-[#37899A]"
-          required
-          v-model="phoneNumber"
-        />
-      </div>
+      <input
+        type="text"
+        placeholder="user@xyz.com"
+        name="username"
+        id="username"
+        class="mt-2 appearance-none text-slate-900 bg-white rounded-md block w-full px-3 h-10 shadow-sm sm:text-sm focus:outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-[#37899A] ring-1 ring-slate-200"
+        required
+        v-model="username"
+      />
     </div>
     <div class="mb-6">
       <label

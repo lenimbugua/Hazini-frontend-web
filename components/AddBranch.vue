@@ -109,7 +109,7 @@ const title = ref("Add Company"); // change current title
       </div>
       <button
         type="submit"
-        class="inline-flex rounded-lg text-sm font-semibold py-2.5 px-4 text-sky-50 bg-cyan-600 hover:text-sky-50/80 hover:bg-cyan-400"
+        class="inline-flex rounded-lg text-sm font-semibold py-2.5 px-4 text-sky-50 bg-teal-700 hover:text-sky-50/80 hover:bg-teal-600"
       >
         <spin v-if="addBranchIsPending" />
         <span v-else>Add Branch</span>

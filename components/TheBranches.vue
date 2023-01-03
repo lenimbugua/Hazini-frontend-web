@@ -29,7 +29,7 @@ refresh();
   <Spin v-if="pending" class="h-20 w-20 text-teal-700" />
   <div
     v-else
-    class="overflow-x-auto h-[35rem] relative shadow-md sm:rounded-lg"
+    class="overflow-auto h-[35rem] relative shadow-md sm:rounded-lg"
   >
     <table class="w-full text-sm text-left text-gray-500">
       <thead class="text-xs text-gray-700 uppercase bg-gray-200">

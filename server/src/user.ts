@@ -1,10 +1,11 @@
 export interface CreateUserParams {
-  full_name: string;
+  username: string;
+  full_names: string;
   phone_number: string;
   password: string;
 }
 
 export interface LoginCredentials {
-  phone_number: string;
+  username: string;
   password: string;
 }

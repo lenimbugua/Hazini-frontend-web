@@ -125,8 +125,18 @@ const title = ref("Add Company"); // change current title
         />
       </div>
       <div class="mb-3">
+        <label
+          for="physical-address"
+          class="block text-sm font-semibold leading-6 mb-5 text-gray-900"
+          >Should loans be approved?</label
+        >
         <label class="inline-flex relative items-center mr-5 cursor-pointer">
-          <input type="checkbox" class="sr-only peer" v-model="approvesLoan" />
+          <input
+            type="checkbox"
+            class="sr-only peer"
+            v-model="approvesLoan"
+            required
+          />
           <div
             class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-600"
           ></div>
@@ -135,7 +145,7 @@ const title = ref("Add Company"); // change current title
       </div>
       <button
         type="submit"
-        class="inline-flex rounded-lg text-sm font-semibold py-2.5 px-4 text-sky-50 bg-cyan-600 hover:text-sky-50/80 hover:bg-cyan-400"
+        class="inline-flex rounded-lg text-sm font-semibold py-2.5 px-4 text-sky-50 bg-teal-700 hover:text-sky-50/80 hover:bg-teal-600"
       >
         <spin v-if="pending" />
         <span v-else>Add Company</span>
