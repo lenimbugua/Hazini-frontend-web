@@ -1,5 +1,9 @@
 <template>
-  <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+  <div class=" flex justify-start text-xl">
+    Loan Products
+  </div>
+  <br>
+  <div class="overflow-x-auto h-[35rem] relative shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left text-gray-500">
       <thead class="text-xs text-gray-700 uppercase bg-gray-200">
         <tr class="divide-x divide-gray-300">
@@ -33,14 +37,10 @@
           <td class="py-4 px-6">branch</td>
 
           <td class="py-4 px-6">
-            <a href="#" class="font-medium text-blue-600 hover:underline"
-              >Edit</a
-            >
+            <a href="#" class="font-medium text-blue-600 hover:underline">Edit</a>
           </td>
           <td class="py-4 px-6">
-            <a href="#" class="font-medium text-blue-600 hover:underline"
-              >Diactivate</a
-            >
+            <a href="#" class="font-medium text-blue-600 hover:underline">Diactivate</a>
           </td>
         </tr>
       </tbody>

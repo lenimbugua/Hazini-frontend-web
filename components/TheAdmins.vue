@@ -1,9 +1,9 @@
 <template>
-  <div class=" flex justify-start">
+  <div class=" flex justify-start text-xl">
     Admins
   </div>
   <br>
-  <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+  <div class="overflow-x-auto h-[35rem] relative shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left text-gray-500">
       <thead class="text-xs text-gray-700 uppercase bg-gray-200">
         <tr class="divide-x divide-gray-300">

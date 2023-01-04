@@ -24,7 +24,7 @@ refresh();
 const formatDate = (date: Date) => useDateFormat(date, formatter);
 </script>
 <template>
-  <div class=" flex justify-start">
+  <div class=" flex justify-start text-xl">
     Users
   </div>
 
