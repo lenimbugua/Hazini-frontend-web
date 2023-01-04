@@ -22,6 +22,10 @@ const formatDate = (date: Date) => useDateFormat(date, formatter);
 
 </script>
 <template>
+  <div class=" flex justify-start text-xl">
+    Companies
+  </div>
+  <br>
   <Spin v-if="pending" class="h-20 w-20 text-teal-700" />
   <div v-else class="overflow-x-auto h-[35rem] relative shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left text-gray-500">
@@ -42,12 +46,8 @@ const formatDate = (date: Date) => useDateFormat(date, formatter);
         </tr>
       </thead>
       <tbody class="divide-y">
-        <tr
-          v-for="(data, index) in data"
-          :key="index"
-          :class="{'bg-gray-50':index%2===1}"
-          class="bg-white border-b divide-x hover:bg-teal-50 cursor-pointer"
-        >
+        <tr v-for="(data, index) in data" :key="index" :class="{ 'bg-gray-50': index % 2 === 1 }"
+          class="bg-white border-b divide-x hover:bg-teal-50 cursor-pointer">
           <td class="py-4 px-6">{{ data.id }}</td>
           <td class="py-4 px-6">{{ data.name }}</td>
           <td class="py-4 px-6">{{ data.physical_address }}</td>
@@ -59,21 +59,17 @@ const formatDate = (date: Date) => useDateFormat(date, formatter);
           <td class="py-4 px-6">{{ data.status }}</td>
           <td class="py-4 px-6">{{ formatDate(data.created_at) }}</td>
           <td class="py-4 px-6">
-            <a href="#" class="font-medium text-teal-700 hover:underline"
-              >Edit</a
-            >
+            <a href="#" class="font-medium text-teal-700 hover:underline">Edit</a>
           </td>
           <td class="py-4 px-6">
-            <td class="py-4 px-6">
-              <label
-                class="inline-flex relative items-center mr-5 cursor-pointer"
-              >
-                <input type="checkbox" value="" class="sr-only peer" checked />
-                <div
-                  class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-600"
-                ></div>
-              </label>
-            </td>
+          <td class="py-4 px-6">
+            <label class="inline-flex relative items-center mr-5 cursor-pointer">
+              <input type="checkbox" value="" class="sr-only peer" checked />
+              <div
+                class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-600">
+              </div>
+            </label>
+          </td>
           </td>
         </tr>
       </tbody>

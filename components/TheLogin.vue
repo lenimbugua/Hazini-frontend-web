@@ -66,7 +66,7 @@ const login = async () => {
       <span v-else>Sign in to account</span>
     </button>
     <p class="mt-6 text-center">
-      <a href="/password/reset" class="text-sm hover:underline"
+      <a href="/resetpassword" class="text-sm hover:underline"
         >Forgot password?</a
       >
     </p>
