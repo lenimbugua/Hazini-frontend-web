@@ -1,11 +1,11 @@
 <script setup lang="ts">
 const router = useRouter();
-const goToDashboard = () => {
+const reset  = async () => {
   // router.push("/dashboard");
 };
 </script>
 <template>
-  <form @submit.prevent="goToDashboard" class="w-full max-w-sm">
+  <form @submit.prevent="reset" class="w-full max-w-sm">
     <div class="mb-6">
       <label for="email" class="block text-sm font-semibold leading-6 text-gray-900">Username</label><input type="tel"
         name="email" id="email"
