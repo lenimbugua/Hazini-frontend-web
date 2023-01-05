@@ -37,9 +37,10 @@ const logout = () => {
                 <div class="flex h-12 w-24 shrink-0 items-center justify-center text-white sm:h-12 sm:w-12">
                   <UserIcon class="text-teal-700" />
                 </div>
-
                 <div class="ml-4">
+                  <nuxt-link to="/profile">
                   <p class="text-sm font-medium text-gray-900">Profile</p>
+                  </nuxt-link>
                 </div>
 
               </div>

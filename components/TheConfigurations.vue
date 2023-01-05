@@ -1,76 +1,35 @@
 
 <template>
-    <div class="shadow overflow-scroll border-b border-gray-200 sm:rounded-lg">
-      <table class="min-w-full divide-y divide-gray-200">
-        <thead class="bg-gray-50">
-          <tr>
-            <th
-              scope="col"
-              class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-            >
-              Description
-            </th>
-  
-            <th
-              scope="col"
-              class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-            >
-              Value
-            </th>
-            <th
-              scope="col"
-              class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-            >
-              Created At
-            </th>
-            <th
-              scope="col"
-              class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-            >
-              Updated At
-            </th>
-            <th
-              scope="col"
-              class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-            >
-              Edit
-            </th>
-            
-            <th
-              scope="col"
-              class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-            >
-              Delete
-            </th>
-          </tr>
-        </thead>
-        <tbody class="bg-white divide-y divide-gray-200">
-          <tr>
-            <td class="px-6 py-4 whitespace-nowrap">
-              <div class="items-center">
-                <div class="ml-4">
-                  <div class="text-sm font-medium text-gray-900">1</div>
-                </div>
-              </div>
-            </td>
-            <td class="px-6 py-4 whitespace-nowrap">
-              <div class="text-sm text-gray-900">fhhfgh</div>
-            </td>
-            <td class="px-6 py-4 whitespace-nowrap">
-              <div class="text-sm text-gray-900">fhhfgh</div>
-            </td>
-            <td class="px-6 py-4 whitespace-nowrap">
-              <div class="text-sm text-gray-900">jhdfhfj</div>
-            </td>
-            <td class="px-6 py-4 whitespace-nowrap">
-              <div class="text-sm text-gray-900">jhdfhfj</div>
-            </td>
-            <td class="px-6 py-4 whitespace-nowrap">
-              <div class="text-sm text-gray-900">jhdfhfj</div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </template>
+  <div class="flex justify-start text-xl">
+    Configurations
+  </div>
+  <br>
+  <div class="overflow-x-auto h-[35rem] relative shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left text-gray-500">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-200">
+        <tr class="divide-x divide-gray-300">
+          <th scope="col" class="py-3 px-6"></th>
+          <th scope="col" class="py-3 px-6">Desription</th>
+          <th scope="col" class="py-3 px-6">Value</th>
+          <th scope="col" class="py-3 px-6">Created At</th>
+          <th scope="col" class="py-3 px-6">Updated At</th>
+          <th scope="col" class="py-3 px-6">Edit</th>
+          <th scope="col" class="py-3 px-6">Delete</th>
+
+        </tr>
+      </thead>
+      <tbody class="divide-y">
+        <tr class="bg-white border-b divide-x hover:bg-teal-50 cursor-pointer">
+          <td class="py-4 px-6"></td>
+          <td class="py-4 px-6">test</td>
+          <td class="py-4 px-6">test</td>
+          <td class="py-4 px-6">test</td>
+          <td class="py-4 px-6">test</td>
+          <td class="py-4 px-6">test</td>
+          <td class="py-4 px-6">test</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
   

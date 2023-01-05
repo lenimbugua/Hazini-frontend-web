@@ -24,7 +24,6 @@
           <td class="py-4 px-6">test</td>
           <td class="py-4 px-6">test</td>
           <td class="py-4 px-6">test</td>
-
         </tr>
       </tbody>
     </table>
