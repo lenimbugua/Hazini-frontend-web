@@ -1,75 +1,35 @@
+<script setup lang="ts">
+
+</script>
 <template>
-    <div class="shadow overflow-scroll border-b border-gray-200 sm:rounded-lg">
-      <table class="min-w-full divide-y divide-gray-200">
-        <thead class="bg-gray-50">
-          <tr>
-            <th
-              scope="col"
-              class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-            >
-              Send to
-            </th>
-  
-            <th
-              scope="col"
-              class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-            >
-              Text
-            </th>
-            <th
-              scope="col"
-              class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-            >
-              TextID
-            </th>
-            <th
-              scope="col"
-              class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-            >
-              Status
-            </th>
-            <th
-              scope="col"
-              class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-            >
-              Failure Reason
-            </th>
-            
-            <th
-              scope="col"
-              class="px-2 py-3 text-left text-xs font-medium tracking-wide sr text-gray-500 uppercase"
-            >
-              Send At
-            </th>
-          </tr>
-        </thead>
-        <tbody class="bg-white divide-y divide-gray-200">
-          <tr>
-            <td class="px-6 py-4 whitespace-nowrap">
-              <div class="items-center">
-                <div class="ml-4">
-                  <div class="text-sm font-medium text-gray-900">1</div>
-                </div>
-              </div>
-            </td>
-            <td class="px-6 py-4 whitespace-nowrap">
-              <div class="text-sm text-gray-900">fhhfgh</div>
-            </td>
-            <td class="px-6 py-4 whitespace-nowrap">
-              <div class="text-sm text-gray-900">fhhfgh</div>
-            </td>
-            <td class="px-6 py-4 whitespace-nowrap">
-              <div class="text-sm text-gray-900">jhdfhfj</div>
-            </td>
-            <td class="px-6 py-4 whitespace-nowrap">
-              <div class="text-sm text-gray-900">jhdfhfj</div>
-            </td>
-            <td class="px-6 py-4 whitespace-nowrap">
-              <div class="text-sm text-gray-900">jhdfhfj</div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </template>
-  
+  <div class=" flex justify-start text-xl">
+    Text Messages
+  </div>
+  <br>
+  <div class="overflow-x-auto h-[35rem] relative shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left text-gray-500">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-200">
+        <tr class="divide-x divide-gray-300">
+          <th scope="col" class="py-3 px-6"></th>
+          <th scope="col" class="py-3 px-6">Sent To</th>
+          <th scope="col" class="py-3 px-6">Text</th>
+          <th scope="col" class="py-3 px-6">Text ID</th>
+          <th scope="col" class="py-3 px-6">Status</th>
+          <th scope="col" class="py-3 px-6">Failure Reason</th>
+          <th scope="col" class="py-3 px-6">Send At</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y">
+        <tr class="bg-white border-b divide-x hover:bg-teal-50 cursor-pointer">
+          <td class="py-4 px-6"></td>
+          <td class="py-4 px-6">test</td>
+          <td class="py-4 px-6">test</td>
+          <td class="py-4 px-6">test</td>
+          <td class="py-4 px-6">test</td>
+          <td class="py-4 px-6">test</td>
+          <td class="py-4 px-6">test</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
