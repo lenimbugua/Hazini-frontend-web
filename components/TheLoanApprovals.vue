@@ -1,4 +1,8 @@
 <template>
+  <div class=" flex justify-start text-xl">
+    Loan Approvals
+  </div>
+ <br/>
   <!-- <Spin class="h-20 w-20 text-teal-700" /> -->
   <div class="overflow-x-auto h-[35rem] relative shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left text-gray-500">
