@@ -13,28 +13,22 @@ const addusers = async () => {
   if (!users.value) return;
   formData.append("file", users.value.files[0]);
   await createUsersBulk(formData, accessToken);
+  // navigateTo('/users')
   console.log(results.value);
 };
 
 const title = ref("Add Users from excel file"); // change current title
 </script>
 <template>
-  
+
   <div class="shadow-md p-5 bg-white">
     <form @submit.prevent="addusers" class="w-full">
       <div class="mb-3">
-        <label
-          for="users-excel"
-          class="block text-sm font-semibold leading-6 text-gray-900"
-          >Users excel *</label
-        >
-        <input
-          type="file"
-          ref="users"
-          id="users-excel"
+        <p class=" text-sm font-semibold">Download this <a href="#" class=" text-teal-800 underline hover:underline ">Csv form</a> ,fill it with list of users and click upload.</p><br>
+        <label for="users-excel" class="block text-sm font-semibold leading-6 text-gray-900">Users excel *</label>
+        <input type="file" ref="users" id="users-excel"
           class="appearance-none text-slate-900 bg-gray-50 rounded-md block w-full px-3 h-10 shadow-sm sm:text-sm focus:outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-sky-500 ring-1 ring-slate-200"
-          required
-        />
+          required />
       </div>
 
       <div v-if="results" class="text-sm space-y-3 mb-3">
@@ -50,11 +44,7 @@ const title = ref("Add Users from excel file"); // change current title
           </p>
         </div>
         <div class="border border-red-300 bg-red-50 p-4 space-y-3">
-          <div
-            v-for="error in results.errors"
-            class="text-red-400"
-            :key="error.row"
-          >
+          <div v-for="error in results.errors" class="text-red-400" :key="error.row">
             <p class="flex space-x-4">
               <span>Row: {{ error.row }}</span>
               <span>Cell: {{ error.cell }}</span>
@@ -66,10 +56,8 @@ const title = ref("Add Users from excel file"); // change current title
       </div>
 
       <p class="text-sm text-red-500">{{ error }}</p>
-      <button
-        type="submit"
-        class="inline-flex rounded-lg text-sm font-semibold py-2.5 px-4 text-sky-50 bg-cyan-600 hover:text-sky-50/80 hover:bg-cyan-400"
-      >
+      <button type="submit"
+        class="inline-flex rounded-lg text-sm font-semibold py-2.5 px-4 text-sky-50 bg-cyan-600 hover:text-sky-50/80 hover:bg-cyan-400">
         <Spin v-if="pending" />
         <span v-else>Add Users</span>
       </button>
