@@ -23,6 +23,7 @@ export const useListCompaniesStore = defineStore("list-companies-store", {
 
           async onResponseError({ request, response, options }) {
             if (response.status == 400) {
+              
             }
             if (response.status === 403) {
             }

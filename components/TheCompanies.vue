@@ -22,7 +22,7 @@ const formatDate = (date: Date) => useDateFormat(date, formatter);
 
 </script>
 <template>
-  <div class=" flex justify-start text-xl">
+  <div class=" flex justify-start text-xl text-black">
     Companies
   </div>
   <br>

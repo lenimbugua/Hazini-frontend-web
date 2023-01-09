@@ -24,7 +24,7 @@ refresh();
 const formatDate = (date: Date) => useDateFormat(date, formatter);
 </script>
 <template>
-  <div class=" flex justify-start text-xl">
+  <div class=" flex justify-start text-xl text-black">
     Users
   </div>
 
@@ -78,9 +78,9 @@ const formatDate = (date: Date) => useDateFormat(date, formatter);
             <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
               {{ index + 1 }}
             </th>
-            <td class="py-4 px-6">{{ user.full_name }}</td>
+            <td class="py-4 px-6">{{ user.full_names }}</td>
             <td class="py-4 px-6">{{ user.phone_number }}</td>
-            <td class="py-4 px-6">{{ user.national_id_number }}</td>
+            <td class="py-4 px-6">{{ user.national_id_number.String }}</td>
             <td class="py-4 px-6">{{ user.net_salary }}</td>
             <td class="py-4 px-6">{{ user.loan_amount }}</td>
             <td class="py-4 px-6">{{ user.balance }}</td>

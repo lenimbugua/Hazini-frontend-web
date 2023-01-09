@@ -13,8 +13,9 @@ const addusers = async () => {
   if (!users.value) return;
   formData.append("file", users.value.files[0]);
   await createUsersBulk(formData, accessToken);
-  // navigateTo('/users')
+
   console.log(results.value);
+
 };
 
 const title = ref("Add Users from excel file"); // change current title
@@ -24,7 +25,9 @@ const title = ref("Add Users from excel file"); // change current title
   <div class="shadow-md p-5 bg-white">
     <form @submit.prevent="addusers" class="w-full">
       <div class="mb-3">
-        <p class=" text-sm font-semibold">Download this <a href="#" class=" text-teal-800 underline hover:underline ">Csv form</a> ,fill it with list of users and click upload.</p><br>
+        <p class=" text-sm font-semibold">Download this <a href="#"
+            class=" text-teal-800 underline hover:underline ">Csv Form</a> ,fill it with list of users and click upload.
+        </p><br>
         <label for="users-excel" class="block text-sm font-semibold leading-6 text-gray-900">Users excel *</label>
         <input type="file" ref="users" id="users-excel"
           class="appearance-none text-slate-900 bg-gray-50 rounded-md block w-full px-3 h-10 shadow-sm sm:text-sm focus:outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-sky-500 ring-1 ring-slate-200"
@@ -54,7 +57,6 @@ const title = ref("Add Users from excel file"); // change current title
           </div>
         </div>
       </div>
-
       <p class="text-sm text-red-500">{{ error }}</p>
       <button type="submit"
         class="inline-flex rounded-lg text-sm font-semibold py-2.5 px-4 text-sky-50 bg-cyan-600 hover:text-sky-50/80 hover:bg-cyan-400">

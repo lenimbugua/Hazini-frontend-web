@@ -54,6 +54,9 @@ export const useCreateUsersBulkStore = defineStore("create-users-bulk-store", {
         if (error.response.status === 400) {
           this.error = "The file provided is not a valid excel file";
         }
+        if (error.response.status === 401){
+          this.error =  "Unauthorized"
+        }
       }
     },
   },

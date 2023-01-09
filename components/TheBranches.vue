@@ -22,11 +22,10 @@ const {
     accessToken: user.value.refresh_token,
   },
 });
-
 refresh();
 </script>
 <template>
-  <div class=" flex justify-start text-xl">
+  <div class=" flex justify-start text-xl text-black">
     Branches
   </div>
   <br>

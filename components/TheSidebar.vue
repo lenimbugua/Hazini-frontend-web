@@ -4,7 +4,7 @@
       <LazyTheLogo />
     </div>
     <nav class="block space-y-3 text-teal-100 p-5">
-      <NuxtLink to="/dashboard" class="cursor-pointer text-sm flex space-x-2">
+      <NuxtLink to="/dashboard" class=" rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer text-sm flex space-x-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6"
           viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6z" />
@@ -12,15 +12,15 @@
         </svg>
         <span>Dashboard</span>
       </NuxtLink>
-      <NuxtLink to="/revenues" class="cursor-pointer text-sm flex space-x-2">
+      <NuxtLink to="/revenues" class=" rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer text-sm flex space-x-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6"
-          viewBox="0 0 24 24">
+          viewBox="0 0 24 24 ">
           <path stroke-linecap="round" stroke-linejoin="round"
             d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" />
         </svg>
         <span>Revenues</span>
       </NuxtLink>
-      <NuxtLink to="/companies" class="cursor-pointer text-sm flex space-x-2">
+      <NuxtLink to="/companies" class=" rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer text-sm flex space-x-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6"
           viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round"
@@ -28,7 +28,7 @@
         </svg>
         <span>Companies</span>
       </NuxtLink>
-      <NuxtLink to="/branches" class="cursor-pointer text-sm flex space-x-2">
+      <NuxtLink to="/branches" class="rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700  cursor-pointer text-sm flex space-x-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6"
           viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round"
@@ -37,7 +37,7 @@
         <span>Branches</span>
       </NuxtLink>
 
-      <NuxtLink to="/admins" class="cursor-pointer text-sm flex space-x-2">
+      <NuxtLink to="/admins" class="rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700  cursor-pointer text-sm flex space-x-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6"
           viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round"
@@ -45,7 +45,7 @@
         </svg>
         <span>Admins</span>
       </NuxtLink>
-      <NuxtLink to="/permissions" class="cursor-pointer text-sm flex space-x-2">
+      <NuxtLink to="/permissions" class="rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700  cursor-pointer text-sm flex space-x-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"
           class="w-6 h-6">
           <path strokeLinecap="round" strokeLinejoin="round"
@@ -54,7 +54,7 @@
 
         <span>Permissions</span>
       </NuxtLink>
-      <NuxtLink to="/users" class="cursor-pointer text-sm flex space-x-2">
+      <NuxtLink to="/users" class=" rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700  cursor-pointer text-sm flex space-x-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6"
           viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round"
@@ -62,7 +62,7 @@
         </svg>
         <span>All Users</span>
       </NuxtLink>
-      <NuxtLink to="/loanapprovals" class="cursor-pointer text-sm flex space-x-2">
+      <NuxtLink to="/loanapprovals" class="rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700  cursor-pointer text-sm flex space-x-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6"
           viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round"
@@ -70,7 +70,7 @@
         </svg>
         <span>Loan Approvals</span>
       </NuxtLink>
-      <NuxtLink to="/loans" class="cursor-pointer text-sm flex space-x-2">
+      <NuxtLink to="/loans" class="rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700  cursor-pointer text-sm flex space-x-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6"
           viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round"
@@ -78,7 +78,7 @@
         </svg>
         <span>Loans</span>
       </NuxtLink>
-      <NuxtLink to="/loanproducts" class="cursor-pointer text-sm flex space-x-2">
+      <NuxtLink to="/loanproducts" class="rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700  cursor-pointer text-sm flex space-x-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
           class="w-6 h-6">
           <path stroke-linecap="round" stroke-linejoin="round"
@@ -87,7 +87,7 @@
 
         <span>Loan Products</span>
       </NuxtLink>
-      <NuxtLink to="/payments" class="cursor-pointer text-sm flex space-x-2">
+      <NuxtLink to="/payments" class="rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700  cursor-pointer text-sm flex space-x-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6"
           viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round"
@@ -95,7 +95,7 @@
         </svg>
         <span>Payments</span>
       </NuxtLink>
-      <NuxtLink to="/disbursements" class="cursor-pointer text-sm flex space-x-2">
+      <NuxtLink to="/disbursements" class="rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700  cursor-pointer text-sm flex space-x-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6"
           viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round"
@@ -103,14 +103,14 @@
         </svg>
         <span> Disbursements </span>
       </NuxtLink>
-      <NuxtLink to="/deductions" class="cursor-pointer text-sm flex space-x-2">
+      <NuxtLink to="/deductions" class="rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer text-sm flex space-x-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6"
           viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" />
         </svg>
         <span>Deduction</span>
       </NuxtLink>
-      <NuxtLink to="/deductionhistory" class="cursor-pointer text-sm flex space-x-2">
+      <NuxtLink to="/deductionhistory" class="rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700  cursor-pointer text-sm flex space-x-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6"
           viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round"
@@ -118,7 +118,7 @@
         </svg>
         <span>Deduction Histories</span>
       </NuxtLink>
-      <NuxtLink to="/textmessages" class="cursor-pointer text-sm flex space-x-2">
+      <NuxtLink to="/textmessages" class="rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700  cursor-pointer text-sm flex space-x-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6"
           viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round"
@@ -126,7 +126,7 @@
         </svg>
         <span>Text Messages</span>
       </NuxtLink>
-      <NuxtLink to="/notifications" class="cursor-pointer text-sm flex space-x-2"><svg
+      <NuxtLink to="/notifications" class="rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700  cursor-pointer text-sm flex space-x-2"><svg
           xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
           class="w-6 h-6">
           <path stroke-linecap="round" stroke-linejoin="round"
@@ -135,7 +135,7 @@
 
         <span>Notifications</span>
       </NuxtLink>
-      <NuxtLink to="/configurations" class="cursor-pointer text-sm flex space-x-2">
+      <NuxtLink to="/configurations" class="rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer text-sm flex space-x-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6"
           viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round"
@@ -145,7 +145,7 @@
 
         <span>Configurations</span>
       </NuxtLink>
-      <NuxtLink to="/profile" class="cursor-pointer text-sm flex space-x-2">
+      <NuxtLink to="/profile" class="rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer text-sm flex space-x-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6"
           viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round"
@@ -153,7 +153,7 @@
         </svg>
         <span>Profile</span>
       </NuxtLink>
-      <NuxtLink to="" class="cursor-pointer text-sm flex space-x-2">
+      <NuxtLink to="" class="rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700  cursor-pointer text-sm flex space-x-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6"
           viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round"
@@ -161,7 +161,7 @@
         </svg>
         <span>MOU</span>
       </NuxtLink>
-      <NuxtLink to="/auditlogs" class="cursor-pointer text-sm flex space-x-2">
+      <NuxtLink to="/auditlogs" class="rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer text-sm flex space-x-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6"
           viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round"
