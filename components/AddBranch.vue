@@ -63,7 +63,7 @@ const title = ref("Add Company"); // change current title
             v-for="company in companies"
             :value="company.id"
             :key="company.id"
-          >
+        >
             {{ company.name }}
           </option>
         </select>

@@ -87,7 +87,7 @@ const formatDate = (date: Date) => useDateFormat(date, formatter);
             <td class="py-4 px-6">{{ user.company_name }}</td>
             <td class="py-4 px-6">{{ user.branch_name }}</td>
             <td class="py-4 px-6">{{ user.assignment }}</td>
-            <td class="py-4 px-6">{{ user.status }}</td>
+            <td class="py-4 px-6">{{ user.user_status }}</td>
             <td class="py-4 px-6">{{ formatDate(user.created_at) }}</td>
             <td class="py-4 px-6">
               <label class="inline-flex relative items-center mr-5 cursor-pointer">
